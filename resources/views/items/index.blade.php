@@ -17,9 +17,9 @@
                         <a href="{{ route('items.create') }}" class="btn btn-success mr-2">
                             <i class="material-icons">&#xE147;</i> <span>Adicionar Novo Item</span>
                         </a>
-                        <a href="{{ route('dashboard') }}" class="btn btn-secondary">
+                        <!-- <a href="{{ route('dashboard') }}" class="btn btn-secondary">
                             <i class="material-icons">&#xe5c4;</i> Voltar para Dashboard
-                        </a>
+                        </a> -->
                         <a href="{{ route('items.export.csv') }}" class="btn btn-primary">Exportar CSV</a>
                         <a href="{{ route('items.export.pdf') }}" class="btn btn-danger">Exportar PDF</a>
                     </div>

@@ -6,12 +6,19 @@
 <link rel="stylesheet" href="{{ asset('css/categories_styles.css') }}">
 
     <div class="container">
-        <div class="card">
-            <div class="card-header text-center">
-                <h2>Categorias</h2>
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2>Gerenciar <b>Categorias</b></h2>
+                    </div>
+                    <div class="col-sm-6 text-end">
+                        <a href="{{ route('categories.create') }}" class="btn btn-success mr-2">Criar Nova Categoria</a>
+                    </div>
+                </div>
             </div>
+            
             <div class="card-body">
-                <a href="{{ route('categories.create') }}" class="btn btn-success mb-3">Criar Nova Categoria</a>
                 <table class="table table-striped">
                     <thead>
                         <tr>
