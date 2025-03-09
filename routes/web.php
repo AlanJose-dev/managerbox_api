@@ -74,6 +74,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/items/{id}/movements', [StockMovementController::class, 'itemHistory'])->name('items.movements');
 });
 
+Route::get('/stock-movements/create', [StockMovementController::class, 'create'])->name('stock-movements.create');
 
 
 

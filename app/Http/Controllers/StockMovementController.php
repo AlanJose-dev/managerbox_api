@@ -41,11 +41,7 @@ class StockMovementController extends Controller
 
     return view('items.movements', compact('item', 'movements')); // Ajuste aqui
 }
-
-
-
-
-    
+   
     public function store(Request $request, $id)
 {
     try {
