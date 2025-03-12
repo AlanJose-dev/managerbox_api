@@ -38,6 +38,7 @@
                             <tr>
                                 <td>{{ $movement->movement_type == 'checkin' ? 'Entrada' : 'Saída' }}</td>
                                 <td>{{ $movement->quantity }}</td>
+                                <td>{{ $movement->user?->name ?? 'Usuário não disponível' }}</td>
                                 <td>{{ $movement->created_at->format('d/m/Y H:i') }}</td>
                             </tr>
                         @endforeach

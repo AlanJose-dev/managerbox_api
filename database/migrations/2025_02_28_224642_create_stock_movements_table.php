@@ -16,7 +16,7 @@ return new class extends Migration
             $table->enum('movement_type', ['checkin', 'checkout']);
             $table->double('quantity');
             $table->decimal('value', 12, 2)->nullable();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Adicionado
+            $table->foreignId('user_id')->constrained('users', 'id')->onDelete('cascade'); // Adicionado
             $table->foreignId('company_id')->constrained('companies', 'id')
             ->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignId('item_in_stock_id')->constrained('items_in_stock')->cascadeOnUpdate()->cascadeOnDelete(); // 🔥 Aqui está o vínculo

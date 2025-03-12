@@ -32,20 +32,21 @@ class StockMovementController extends Controller
     }
 
     public function itemHistory($id)
-{
-    $item = ItemInStock::findOrFail($id);
-    $movements = StockMovement::where('item_in_stock_id', $id)
-        ->with('user')
-        ->orderBy('created_at', 'desc')
-        ->get();
+    {
+        $item = ItemInStock::findOrFail($id);
+        $movements = StockMovement::where('item_in_stock_id', $id)
+            ->with('user')
+            ->orderBy('created_at', 'desc')
+            ->get();
 
-    return view('items.movements', compact('item', 'movements')); // Ajuste aqui
-}
-   
+        return view('items.movements', compact('item', 'movements')); // Ajuste aqui
+    }
+
     public function store(Request $request, $id)
-{
-    try {
-        return DB::transaction(function () use ($request, $id) {
+    {
+        try {
+            DB::beginTransaction();
+
             $request->validate([
                 'movement_type' => 'required|in:checkin,checkout',
                 'quantity' => 'required|numeric|min:1',
@@ -73,24 +74,24 @@ class StockMovementController extends Controller
                 'item_in_stock_id' => $id,
             ]);
 
+            DB::commit();
+
             return back()->with('success', 'Movimentação registrada com sucesso.');
-        });
-    } catch (\Exception $e) {
-        return back()->with('error', 'Ocorreu um erro ao registrar a movimentação: ' . $e->getMessage());
+        } catch (\Exception $e) {
+            DB::rollBack();
+            Log::error($e);
+            return back()->with('error', 'Ocorreu um erro ao registrar a movimentação: ' . $e->getMessage());
+        }
     }
-}
 
     /**
      * Display the specified resource.
      */
     public function show(StockMovement $stockMovement)
     {
-        try
-        {
-//        return View::make('')->with($stockMovement)->render();
-        }
-        catch(\Exception $exception)
-        {
+        try {
+            //        return View::make('')->with($stockMovement)->render();
+        } catch (\Exception $exception) {
             Log::error($exception);
             return $this->sendErrorResponse();
         }

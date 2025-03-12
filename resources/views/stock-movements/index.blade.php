@@ -11,14 +11,14 @@
                 </div>
                 <div>
                     <label class="block text-sm font-medium mb-1">Tipo</label>
-                    <select name="type" class="form-select">
+                    <select name="type" class="border px-3 py-2 rounded mb-4">
                         <option value="">Todos</option>
                         <option value="checkin">Entrada</option>
                         <option value="checkout">Saída</option>
                     </select>
                 </div>
                 <div>
-                    <button type="submit" class="btn bg-blue-500 text-white">
+                    <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">
                         Filtrar
                     </button>
                 </div>
@@ -34,7 +34,7 @@
             <h1 class="text-2xl font-bold">Histórico Completo de Movimentações</h1>
             <div class="flex gap-2">
                 <a href="{{ route('stock-movements.export') }}" 
-                   class="btn bg-blue-500 text-white hover:bg-blue-600">
+                   class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">
                     Exportar
                 </a>
             </div>
