@@ -26,5 +26,7 @@
     <div class="container mx-auto p-8">
         @yield('content')
     </div>
+
+    @include('layouts.footer')
 </body>
 </html>

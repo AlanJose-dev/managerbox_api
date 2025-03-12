@@ -14,13 +14,8 @@
                         <h2>Gerenciar <b>Estoque</b></h2>
                     </div>
                     <div class="col-sm-6 text-end">
-                        <a href="{{ route('items.create') }}" class="btn btn-success mr-2">
-                            <i class="material-icons">&#xE147;</i> <span>Adicionar Novo Item</span>
-                        </a>
-                        <!-- <a href="{{ route('dashboard') }}" class="btn btn-secondary">
-                            <i class="material-icons">&#xe5c4;</i> Voltar para Dashboard
-                        </a> -->
-                        <a href="{{ route('items.export.csv') }}" class="btn btn-primary">Exportar CSV</a>
+                        <a href="{{ route('items.create') }}" class="btn btn-success mr-2">Adicionar Novo Item</a>
+                        <a href="{{ route('items.export.csv') }}" class="btn btn-primary mr-2">Exportar CSV</a>
                         <a href="{{ route('items.export.pdf') }}" class="btn btn-danger">Exportar PDF</a>
                     </div>
                 </div>
@@ -79,20 +74,24 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <a href="{{ route('items.show', $item->id) }}" class="edit" title="Detalhes">
-                                        <i class="material-icons">&#xE417;</i>
+                                    <!-- Detalhes -->
+                                    <a href="{{ route('items.show', $item->id) }}" class="btn btn-info btn-sm mr-2">
+                                        <i class="material-icons">&#xE417;</i> Detalhes
                                     </a>
-                                    <a href="{{ route('items.edit', $item->id) }}" class="edit" title="Editar">
-                                        <i class="material-icons">&#xE254;</i>
+                                    <!-- Editar -->
+                                    <a href="{{ route('items.edit', $item->id) }}" class="btn btn-primary btn-sm mr-2">
+                                        <i class="material-icons">&#xE254;</i> Editar
                                     </a>
-                                    <a href="{{ route('items.movements', $item->id) }}" class="move" title="Movimentar Estoque">
-                                        <i class="material-icons">&#xE8CB;</i> <!-- Ícone de movimentação -->
+                                    <!-- Movimentar Estoque -->
+                                    <a href="{{ route('items.movements', $item->id) }}" class="btn btn-warning btn-sm mr-2">
+                                        <i class="material-icons">&#xE8CB;</i> Movimentar
                                     </a>
+                                    <!-- Excluir -->
                                     <form action="{{ route('items.destroy', $item->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Tem certeza que deseja excluir este item?');">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="delete" title="Excluir">
-                                            <i class="material-icons">&#xE872;</i>
+                                        <button type="submit" class="btn btn-danger btn-sm">
+                                            <i class="material-icons">&#xE872;</i> Excluir
                                         </button>
                                     </form>
                                 </td>
