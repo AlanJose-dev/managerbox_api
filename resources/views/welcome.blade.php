@@ -160,7 +160,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    {{-- <!-- Footer -->
     <footer class="bg-gray-900 text-white py-8">
         <div class="container mx-auto text-center">
             <p>© 2025 ManagerBox. Todos os direitos reservados.</p>
@@ -170,7 +170,8 @@
                 <a href="#" class="text-gray-300 hover:text-white mx-2"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
-    </footer>
+    </footer> --}}
+    @include('layouts.footer')
 
 </body>
 

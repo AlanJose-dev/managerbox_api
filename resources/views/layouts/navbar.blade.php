@@ -1,6 +1,6 @@
 <nav class="bg-white border-b border-gray-200 shadow-md">
     <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-        <a href="{{ route('dashboard') }}" class="text-xl font-bold text-gray-800">ManagerBox</a>
+        <a href="{{ route('dashboard') }}" class="text-xl font-bold text-gray-800">{{auth()->user()->relatedCompany->fantasy_name}}</a>
 
         <div class="flex space-x-6">
             <a href="{{ route('dashboard') }}" class="text-gray-600 hover:text-gray-900">Dashboard</a>
