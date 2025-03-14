@@ -162,7 +162,7 @@ class DashboardController extends Controller
 
         // Alertas de estoque crítico
         $criticalStockAlerts = ItemInStock::where('company_id', $companyId)
-            ->whereRaw('current_quantity <= minimum_quantity * 0.2')
+            ->where(DB::raw('current_quantity'), '<=', DB::raw('minimum_quantity * 0.2'))
             ->get();
 
         // Valor total do estoque
