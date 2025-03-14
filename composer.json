@@ -8,13 +8,14 @@
     "require": {
         "php": "^8.2",
         "barryvdh/laravel-dompdf": "^3.1",
-        "darkaonline/l5-swagger": "^8.6",
+        "darkaonline/l5-swagger": "^9.0",
         "dompdf/dompdf": "^3.1",
         "laravel/framework": "^11.31",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
         "maatwebsite/excel": "^3.1",
-        "spatie/laravel-permission": "^6.14"
+        "spatie/laravel-permission": "^6.14",
+        "zircote/swagger-php": "^5.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

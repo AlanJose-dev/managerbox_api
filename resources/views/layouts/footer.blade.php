@@ -27,7 +27,7 @@
                         <li class="mb-4"><a href="https://github.com/EmersonLima03" class="hover:underline">Emerson Lima</a></li>
                         <li class="mb-4"><a href="https://github.com/user3" class="hover:underline">Davi Henrique</a></li>
                         <li class="mb-4"><a href="https://github.com/GabrielVnM08" class="hover:underline">Gabriel Vidal</a></li>
-                        <li><a href="https://github.com/user5" class="hover:underline">Sócrates Luna</a></li>
+                        <li><a href="https://github.com/LammerXell" class="hover:underline">Sócrates Luna</a></li>
                     </ul>
                 </div>
             </div>
